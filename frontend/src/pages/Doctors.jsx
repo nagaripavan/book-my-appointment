@@ -37,8 +37,10 @@ const Doctors = () => {
                     <div onClick={()=>navigate(`/appointment/${item._id}`)} className='border border-blue-200 cursor-pointer rounded-2xl bg-[#EAEFFF] overflow-hidden hover:translate-y-[-10px] transition-all duration-500'>
                         <img className='' src={item.image} alt="" />
                         <div className='bg-white p-4' key={index}>
-                            <div className='flex items-center gap-2 text-sm text-center text-green-500'>
-                                <p className='w-2 h-2 bg-green-500 rounded-full'></p><p >Available</p>
+                            <div className={`flex items-center gap-2 text-sm text-center ${item.available?'text-green-500':'text-gray-500'}`}>
+                                <p className={`w-2 h-2 ${item.available?'bg-green-500':'bg-gray-500'} rounded-full`}></p>{
+                                    item.available?<p >Available</p>:<p>Not Available</p>
+                                }
                             </div>
                             <div>
                                 <p className='font-medium text-lg'>{item.name}</p>
