@@ -33,8 +33,8 @@ const Doctors = () => {
           </div>
           {loadingDoctors?
   
-              <div className="flex justify-center items-center h-40">
-                <div className="w-10 h-10 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+              <div className="flex justify-center items-center w-full min-h-[300px]">
+                  <div className="w-10 h-10 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
               </div>:
               <div className=' grid grid-cols-1 md:grid-cols-4 gap-4 '>
                   {
