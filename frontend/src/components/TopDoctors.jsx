@@ -4,8 +4,18 @@ import { AppContext} from '../context/AppContext'
 
 const TopDoctors = () => {
     const navigate=useNavigate();
-    const {doctors}=useContext(AppContext)
-  return (
+    const {doctors,loadingDoctors}=useContext(AppContext)
+  
+  
+  if (loadingDoctors) {
+    return (
+      <div className="flex justify-center items-center h-40">
+        <div className="w-10 h-10 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+  
+    return (
     <div className='m-10 mt-40'>
         <div className='flex justify-center items-center flex-col'>
             <h1 className='text-black text-3xl font-bold text-center' >Top Doctors to Book</h1>
